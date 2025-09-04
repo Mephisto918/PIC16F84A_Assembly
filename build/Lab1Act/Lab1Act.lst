@@ -1,0 +1,79 @@
+MPASM  5.20                       LAB1ACT.ASM   9-5-2025  7:07:28         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (list)
+                      00001 list p=16F84A
+                      00002 
+Warning[205]: Found directive in column 1. (org)
+0000                  00003 org 0x00
+                      00004 
+0000                  00005 Start
+Warning[207]: Found label after column 1. (STATUS)
+  00000003            00006   STATUS equ 03h
+Warning[207]: Found label after column 1. (TRISA)
+  00000085            00007   TRISA equ 085h
+Warning[207]: Found label after column 1. (TRISB)
+  00000086            00008   TRISB equ 086h
+Warning[207]: Found label after column 1. (PORTA)
+  00000005            00009   PORTA equ 05h
+Warning[207]: Found label after column 1. (PORTB)
+  00000006            00010   PORTB equ 06h
+                      00011 
+0000                  00012 Setup
+0000   1683           00013   bsf STATUS,5
+0001   3000           00014   movlw 0x00
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0002   0086           00015   movwf TRISB
+0003   30FF           00016   movlw 0xff
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0004   0085           00017   movwf TRISA
+0005   1283           00018   bcf STATUS,5
+0006   3000           00019   movlw 0x00
+0007   0086           00020   movwf PORTB
+                      00021 
+0008                  00022 Main
+0008   30FF           00023   movlw 0xff
+0009   0086           00024   movwf PORTB
+                      00025 
+000A   3000           00026   movlw b'00000000'
+000B   0086           00027   movwf PORTB
+                      00028   
+Warning[203]: Found opcode in column 1. (goto)
+000C   2808           00029 goto Main
+Warning[205]: Found directive in column 1. (end)
+                      00030 end
+MPASM  5.20                       LAB1ACT.ASM   9-5-2025  7:07:28         PAGE  2
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+Main                              00000008
+PORTA                             00000005
+PORTB                             00000006
+STATUS                            00000003
+Setup                             00000000
+Start                             00000000
+TRISA                             00000085
+TRISB                             00000086
+__16F84A                          00000001
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXX--- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    13
+Program Memory Words Free:  1011
+
+
+Errors   :     0
+Warnings :     9 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+
