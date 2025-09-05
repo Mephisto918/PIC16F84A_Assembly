@@ -1,10 +1,16 @@
-# PIC16F84A Assembly Projects
+# PIC16F84A Assembly
 
 This repository contains assembly projects for the **PIC16F84A** microcontroller. It includes example labs, notes, and a workflow for compiling `.asm` files into output files using **MPASMWIN**.
 
+### Notes on Linux / Wine
+
+- On Linux, when using `MPASMWIN.EXE` with Wine, avoid placing your project deep in nested directories.
+- Long Linux paths can cause MPASM to fail due to Wine translating the paths into Windows-style paths.
+- Recommended: keep your project in a top-level folder like `~/Desktop` or `~/Downloads` for smoother compilation.
+
 ## Documentation
 
-- **PIC16F84A Notes and Figures**: See [docs/notes.md](docs/notes.md) for notes and diagrams related to the chip.
+- **PIC16F84A Notes and Figures**: See [docs/notes.md](docs/notes.md), contains reference diagrams, instruction set summaries, and example code snippets..
 
 ---
 
@@ -14,7 +20,7 @@ This repository contains assembly projects for the **PIC16F84A** microcontroller
   - `wine` to run `MPASMWIN.EXE`
 - **Windows**:
   - MPASMWIN can be used directly (output will be in the MPASMWIN directory)
-- Bash shell (Linux/macOS)
+- Bash shell (Linux/macOS), git Bash
 
 ---
 
@@ -59,7 +65,7 @@ Ensure your ASM files follow the PIC16F84A instruction set and syntax.
 ## References
 
 - **Microchip PIC16F84A Datasheet**  
-  [https://www.microchip.com](https://www.microchip.com)
+  [https://ww1.microchip.com/downloads/en/devicedoc/35007b.pdf](https://ww1.microchip.com/downloads/en/devicedoc/35007b.pdf)
 
 - **MPASM User Guide**  
   [https://www.microchip.com](https://www.microchip.com)
